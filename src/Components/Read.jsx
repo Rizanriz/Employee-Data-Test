@@ -9,10 +9,10 @@ function Read() {
 
   useEffect(() => {
     axios
-      .get(`https://emp-server-5umk.onrender.com/users/` + id)
+      .get(`https://employee-server-test.onrender.com/users/${id}`) 
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [id]); 
 
   return (
     <div className="d-flex w-100 vh-100 justify-content-center align-items-center">

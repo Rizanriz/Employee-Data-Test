@@ -7,25 +7,25 @@ function Update() {
 
   const { id } = useParams();
 
-  const [values,setValues] = useState({
-     name : '',
-     email : '',
-     phone : ''
-  })
+const [values, setValues] = useState({
+  name: '',
+  email: '',
+  phone: ''
+});
 
   const navigate = useNavigate()
   useEffect(() => {
     axios
-      .get(`https://emp-server-5umk.onrender.com/users/` + id)
+      .get(`http://localhost:3000/users` + id)
       .then((res) => {
         setValues(res.data)
       })
       .catch((err) => console.log(err));
   }, []);
-
+  
   const handleUpdate = (event)=>{
     event.preventDefault()
-    axios.put(`https://emp-server-5umk.onrender.com/users/${id}`,values)
+    axios.put(`https://employee-server-test.onrender.com/users/${id}`,values)
       .then(res => {
         console.log(res)
         navigate("/")

@@ -14,7 +14,7 @@ function Create() {
   const navigate = useNavigate()
   const handleSubmit = (event)=>{
       event.preventDefault()
-      axios.post('https://emp-server-5umk.onrender.com/users',values)
+      axios.post('https://employee-server-test.onrender.com/users',values)
         .then(res => {
           console.log(res)
           navigate("/")
@@ -45,6 +45,7 @@ function Create() {
           <button className='btn btn-success'>Submit</button>
           <Link to="/" className='btn btn-primary ms-3'>Back</Link>
         </form>
+        
       </div>
     </div>
   )
