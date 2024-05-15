@@ -34,7 +34,7 @@ function Home() {
 
     return (
         <div className='d-flex flex-column justify-content-center align-items-center' id='main'>
-            <h1 className='text-white mt-3'>Employee Details</h1>
+            <h1 className=' mt-3'>Employee Details</h1>
             <div className='w-75 border shadow p-4 rounded' id='home'>
                 <div className='d-flex justify-content-end mb-3'><Link to="/create" className='btn btn-success'>Add +</Link></div>
                 <table className='table table-striped'>
