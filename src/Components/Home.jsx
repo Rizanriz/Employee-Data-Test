@@ -1,7 +1,8 @@
 import axios from 'axios';
-import { Dropdown } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
+
 
 function Home() {
     const [data, setData] = useState([]);
@@ -58,15 +59,11 @@ function Home() {
                                         <Link to={`/read/${d.id}`} className='btn btn-info btn-sm me-4'>Read</Link>
                                         <Link to={`/update/${d.id}`} className="btn btn-success btn-sm me-4">Edit</Link>
                                         <button onClick={() => handleDelete(d.id)} className='btn btn-danger btn-sm'>Delete</button>
-                                        <Dropdown>
-                                            <Dropdown.Toggle className='btn btn-info btn-sm mt-3' variant="dark" id={`dropdown-${d.id}`}>
-                                                Status
-                                            </Dropdown.Toggle>
-                                            <Dropdown.Menu>
-                                                <Dropdown.Item href={`#/action-1-${d.id}`}>Active</Dropdown.Item>
-                                                <Dropdown.Item href={`#/action-2-${d.id}`}>Inactive</Dropdown.Item>
-                                            </Dropdown.Menu>
-                                        </Dropdown>
+                                        <Form.Select aria-label="Default select example" className='mt-3' style={{width:"120px"}}>
+                                            <option>Status</option>
+                                            <option value="1">Active</option>
+                                            <option value="2">Inactive</option>
+                                        </Form.Select>
                                     </td>
                                 </tr>
                             ))
